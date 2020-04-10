@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+
+    <div class="text-center">
+
+        @ViewBag.Greeting. Right now, the time is @ViewBag.Hour:@ViewBag.Minute:@ViewBag.Second
+        <h3>
+            We're going to have an exciting party.<br /> <br/>
+            <img src="~/images/invitation.jpg" alt="invitation image">
+
+            <br/><br/>
+        </h3>
+
+        <h4>And you are invited!</h4>
+
+        <!-- The attribute is an example of a tag helper attribute, which is an instruction for Razor that will be performed when the view is rendered. -->
+        <a class="btn btn-info" asp-action="RsvpForm">Registor Now!</a>
+    </div>
+</body>
+</html> 

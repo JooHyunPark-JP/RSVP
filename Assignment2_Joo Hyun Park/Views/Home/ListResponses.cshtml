@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Assignment2_Joo_Hyun_Park.Models.GuestResponse>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Responses</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="panel-body">
+        <h2>Here is the list of people attending the party</h2>
+        <table class="table table-sm table-striped table-bordered">
+                <!--thead is a group header content in an HTML table-->
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Technical Interest</th>
+                        <th>Social Interest</th>
+                    </tr>
+                </thead>
+
+                <!--tbody is elements to specify each part of a table.-->
+                <tbody>
+                    @foreach (Assignment2_Joo_Hyun_Park.Models.GuestResponse r in Model)
+            {
+                        <tr>
+                            <td>@r.Name</td>
+                            <td>@r.Email</td>
+                            <td>@r.Phone</td>
+                            <td>@r.Address</td>
+                            <td>@r.TechInterest</td>
+                            <td>@r.SocialNetworkInterest</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        Click <a class="nav-link" asp-action="Index">here</a> to go back to main page.
+        </div>
+</body>
+</html> 

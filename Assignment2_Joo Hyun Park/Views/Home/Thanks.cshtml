@@ -1,0 +1,36 @@
+﻿@model Assignment2_Joo_Hyun_Park.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body class="text-center">
+    <h5>Student name = Joo Hyun Park</h5>
+    <h5>Student ID = PARKJOOH</h5>
+    <h5>Assignment Number = 2</h5>
+    <h5>Professor name = Syed Tanbeer </h5> <br />
+
+    <div class="text-center">
+        <h2>Thank you, @Model.Name!</h2> <br/>
+        @if (Model.TechInterest.HasValue)
+        {
+            <img src="~/images/Thank you.jpg" alt="Thank you"> <br/>
+             @: : You were enrolled in the "@Model.TechInterest" track of the competition
+
+        }
+        else
+        {   <img src="~/images/sad.jpg" alt="sad"> <br/>
+            @:Sorry to hear that you can't make it, but thanks for letting us know.
+            
+        }
+</div>
+    Click <a class="nav-link" asp-action="ListResponses">here</a> to see who is coming. <br/>
+    Click <a class="nav-link" asp-action="Index">here</a> to go back to main page.
+</body>
+</html> 

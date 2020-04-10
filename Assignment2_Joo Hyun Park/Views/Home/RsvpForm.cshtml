@@ -1,0 +1,77 @@
+﻿
+@model Assignment2_Joo_Hyun_Park.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>You have been invited!</h4></div>
+        <div class="panel-body">
+            <!--Make a form of guests  -->
+            <form class="p-a-1" asp-action="RsvpForm" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <!--Each element is associated with the model property using the asp-for attribute-->
+                    <!--This is same as
+        <p>
+        <label for="Name">Your name:</label>
+        <input type="text" id="Name" name="Name" value="">
+        </p> -->
+                    <label asp-for="Name">Your name:</label>
+                    <input class="form-control" placeholder="Enter your full name" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="StudentId">Your Student ID:</label>
+                    <input class="form-control" placeholder="Enter your e-mail" asp-for="StudentId" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Your email:</label>
+                    <input class="form-control" placeholder="Enter your e-mail" asp-for="Email" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Your phone:</label>
+                    <input class="form-control" placeholder="Enter your phone" asp-for="Phone" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Address">Your Address:</label>
+                    <input class="form-control" placeholder="Enter your Address" asp-for="Address" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SocialNetworkInterest">What social network would you like?:</label>
+                    <input class="form-control" placeholder="Facebook,Twitter,Linkedin,Youtube...etc" asp-for="SocialNetworkInterest" />
+                </div>
+
+                <div class="form-group">
+                    <label>Select your technical interest</label>
+                    <select class="form-control" asp-for="TechInterest">
+                        <option value="">Choose an option</option>
+                        <option value="loT">Interest of Things</option>
+                        <option value="MotionSensors">Motion Sensor Technology</option>
+                        <option value="DataAnalytics">Data Analytics Tools</option>
+                        <option value="Programming">Computer Programming</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button name="answer" class="btn btn-primary" type="submit" id="btnAccept" value="Accept">
+                        Accept invitation
+                    </button>
+                    <button name="answer" class="btn btn-danger" type="submit" id="btnRegret" value="Regret">
+                        Send Regret
+                    </button>
+                </div>
+                Click <a class="nav-link" asp-action="Index">here</a> to go back to main page.
+            </form>
+        </div>
+    </div>
+</body>
+</html>
